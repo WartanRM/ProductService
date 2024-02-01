@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 using System.Reflection.PortableExecutable;
 
 
@@ -37,15 +38,30 @@ namespace ProductService.Models.ViewModels
             return track;
 
         }
-
-        public Track GetTrack(int Id)
+    
+        public IEnumerable<Track> GetTrackbyTitle(string title)
         {
-            return Tracks.Where(trck => trck.TrackId == Id).First();
+
+            return Tracks.Where(s => s.Name.Contains(title)).ToList(); ;
+
         }
 
         public IEnumerable<Track> GetTracks()
+            {
+                return Tracks;
+            }
+        public IEnumerable<Track> GetTrackbyArtist(string artist)
         {
-            return Tracks;
+
+            return Tracks.Where(s => s.Artists.Contains(artist)).ToList(); ;
+
+        }
+
+        public IEnumerable<Track> GetTrackbyAlbum(string album)
+        {
+
+            return Tracks.Where(s => s.Album.Contains(album)).ToList(); ;
+
         }
 
     }

@@ -14,13 +14,12 @@ namespace ProductService.Controllers
 
         }
 
-
         [HttpGet]
         [Route("Data/Tracks/GetTrackbyTitle")]
         public IEnumerable<Track> GetTrackbyTitle(string title)
         {
 
-            return trackRepository.GetTrackbyArtist(title);
+            return trackRepository.GetTrackbyTitle(title);
         }
 
         [HttpGet]
@@ -42,7 +41,23 @@ namespace ProductService.Controllers
         public IEnumerable<Track> GetTrackbyAlbum(string album)
         {
 
-            return trackRepository.GetTrackbyArtist(album);
+            return trackRepository.GetTrackbyAlbum(album);
+        }
+
+        [HttpGet]
+        [Route("Data/Tracks/GetTrackbyGenre")]
+        public IEnumerable<Track> GetTrackbyGenre(string genre)
+        {
+
+            return trackRepository.GetTrackbyGenre(genre);
+        }
+
+        [HttpGet]
+        [Route("Data/Tracks/GetTrackbyGenre")]
+        public IEnumerable<Track> GetTrackbyYear(int year)
+        {
+
+            return trackRepository.GetTrackbyYear(year);
         }
 
     }

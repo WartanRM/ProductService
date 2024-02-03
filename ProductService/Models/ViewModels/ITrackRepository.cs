@@ -2,9 +2,12 @@
 {
     public interface ITrackRepository
     {
-        Track GetTrack(int _);
         IEnumerable<Track> GetTracks();
+        IEnumerable<Track> GetTrackbyTitle(string _);
+        IEnumerable<Track> GetTrackbyAlbum(string _);   
         IEnumerable<Track> GetTrackbyArtist(string _);
+        IEnumerable<Track> GetTrackbyGenre(string _);  
+        IEnumerable<Track> GetTrackbyYear(string _);
 
     }
 

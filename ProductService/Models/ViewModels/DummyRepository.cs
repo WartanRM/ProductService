@@ -64,5 +64,19 @@ namespace ProductService.Models.ViewModels
 
         }
 
+        public IEnumerable<Track> GetTrackbyGenre(string genre)
+        {
+
+            return Tracks.Where(s => s.Genres.Contains(genre)).ToList(); 
+
+        }
+
+        public IEnumerable<Track> GetTrackbyYear(string year)
+        {
+
+            return Tracks.Where(s => s.Year.Contains(year)).ToList();
+
+        }
+
     }
 }

@@ -7,5 +7,6 @@
         public List<string> Artists { get; set; }
         public List<string> Genres { get; set; }
         public string Album { get; set; }
+        public string Year {  get; set; }
     }
 }
